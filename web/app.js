@@ -172,6 +172,59 @@ function renderChart(chart) {
   const maximum = Math.max(1, ...chart.map((row) => Math.abs(row.value)));
   for (const row of chart) { const container = node("div", undefined, "chart-row"); const bar = node("progress"); bar.max = maximum; bar.value = Math.abs(row.value); bar.setAttribute("aria-label", `${row.label}: ${format(row.value)} NEAR`); container.append(node("span", row.label), bar, node("span", format(row.value) + " NEAR")); $("result-chart").append(container); }
 }
+function renderMonthlyVolume(months = []) {
+  const container = $("intents-volume-chart");
+  const values = months.filter(({ volume_usd }) => volume_usd !== null);
+  container.replaceChildren();
+  show("intents-volume-chart", values.length >= 2);
+  if (values.length < 2) return;
+
+  const monthFormat = new Intl.DateTimeFormat("en", { month: "short", timeZone: "UTC" });
+  const fullMonthFormat = new Intl.DateTimeFormat("en", { month: "long", year: "numeric", timeZone: "UTC" });
+  const dollars = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
+  const compact = new Intl.NumberFormat("en-US", { notation: "compact", maximumFractionDigits: 1 });
+  const peak = Math.max(...values.map(({ volume_usd }) => volume_usd));
+  const step = 10 ** Math.floor(Math.log10(Math.max(1, peak) / 4));
+  const tickSize = Math.ceil(peak / 4 / step) * step || 1;
+  const left = 79, right = 686, top = 20, bottom = 262;
+  const y = (value) => bottom - value / (tickSize * 4) * (bottom - top);
+  const svgNode = (tag, attributes) => {
+    const element = document.createElementNS("http://www.w3.org/2000/svg", tag);
+    for (const [name, value] of Object.entries(attributes)) element.setAttribute(name, value);
+    return element;
+  };
+  const svg = svgNode("svg", { viewBox: "0 0 710 309", role: "img", "aria-labelledby": "volume-chart-title" });
+  const title = node("h4", "NEAR Intents · Monthly Swap Volume");
+  title.id = "volume-chart-title";
+  for (let i = 0; i <= 4; i++) {
+    const value = i * tickSize;
+    const label = svgNode("text", { x: left - 12, y: y(value) + 5, "text-anchor": "end" });
+    label.textContent = "$" + compact.format(value);
+    svg.append(svgNode("line", { x1: left, x2: right, y1: y(value), y2: y(value), class: "volume-grid" }), label);
+  }
+  const points = [];
+  const path = months.map(({ month, volume_usd }, index) => {
+    const x = left + (right - left) * index / (months.length - 1);
+    const date = new Date(month + "-01T00:00:00Z");
+    if (index === 0 || index === months.length - 1 || (index % 3 === 0 && index < months.length - 2)) {
+      const label = svgNode("text", { x, y: bottom + 27, "text-anchor": "middle" });
+      label.textContent = monthFormat.format(date);
+      svg.append(label);
+    }
+    if (volume_usd === null) return "";
+    const dot = svgNode("circle", { cx: x, cy: y(volume_usd), r: 4, class: "volume-dot" });
+    const tooltip = svgNode("title", {});
+    tooltip.textContent = fullMonthFormat.format(date) + " · " + dollars.format(volume_usd);
+    dot.append(tooltip);
+    points.push(dot);
+    const command = index === 0 || months[index - 1].volume_usd === null ? "M" : "L";
+    return `${command}${x},${y(volume_usd)}`;
+  }).join(" ");
+  svg.append(svgNode("path", { d: path, class: "volume-line" }), ...points);
+  const first = fullMonthFormat.format(new Date(values[0].month + "-01T00:00:00Z"));
+  const last = fullMonthFormat.format(new Date(values.at(-1).month + "-01T00:00:00Z"));
+  container.append(title, svg, node("p", `${first}–${last} · USD · Source: DefiLlama`, "volume-source"));
+}
 function renderResult(output) {
   const result = output.result; state.result = output; $("result-title").textContent = result.headline;
   $("result-summary").textContent = result.summary; $("result-badges").replaceChildren();
@@ -190,6 +243,7 @@ function renderResult(output) {
   $("supports").textContent += sharedContext[state.thesis] || "";
    $("investment-link").textContent = result.investment_link; $("limits").textContent = result.limits;
   renderTable(result.rows || []); renderChart(result.chart);
+  renderMonthlyVolume(result.monthly_swap_volume);
   const rowsDetail = $("result-table").closest("details");
   const primaryTables = {
     quotes: "Quote matrix · every planned cell",

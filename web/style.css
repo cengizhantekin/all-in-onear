@@ -266,3 +266,12 @@ html { scrollbar-gutter: stable; }
   .lab-intro-icon { width: 44px; height: 44px; padding: 9px; }
   .thesis-groups { grid-template-columns: 1fr; gap: 14px; }
 }
+
+.volume-chart{margin-top:20px}
+.volume-chart h4{font-size:17px;font-weight:700;margin-bottom:12px}
+.volume-chart svg{display:block;width:100%;height:auto;max-width:950px;margin:0 auto}
+.volume-chart text{font-size:16px;fill:#544764}
+.volume-grid{stroke:#e1d8ed}
+.volume-line{fill:none;stroke:#6f3abe;stroke-width:3.5;stroke-linejoin:round;stroke-linecap:round}
+.volume-dot{fill:#6f3abe;stroke:#fff;stroke-width:1.5}
+.volume-source{font-size:12px;color:#544764;margin:8px 0 0}

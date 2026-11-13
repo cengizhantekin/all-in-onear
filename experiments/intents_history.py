@@ -51,6 +51,23 @@ def total(points, name, first, last):
     return sum(points[day] for day in days)
 
 
+def monthly_volume(points, cutoff):
+    first_day = min(points)
+    month = first_day.replace(day=1)
+    if first_day != month:
+        month = (month.replace(day=28) + timedelta(days=4)).replace(day=1)
+    months = []
+    while month < cutoff.replace(day=1):
+        next_month = (month.replace(day=28) + timedelta(days=4)).replace(day=1)
+        days = [month + timedelta(days=i) for i in range((next_month - month).days)]
+        months.append({
+            "month": month.strftime("%Y-%m"),
+            "volume_usd": float(sum(points[day] for day in days)) if all(day in points for day in days) else None,
+        })
+        month = next_month
+    return months
+
+
 def analyze(evidence):
     if set(evidence) != set(INTENTS_HISTORY_URLS):
         raise ValueError("Expected the volume, gross fee and wallet revenue captures")
@@ -83,6 +100,7 @@ def analyze(evidence):
                     metric("Latest reported wallet revenue", latest["Reported wallet revenue (USD)"], "USD"),
                     metric("Wallet revenue / volume", latest["Wallet revenue / volume (bps)"], "bps")],
         "rows": rows,
+        "monthly_swap_volume": monthly_volume(points["volume"], PERIODS[-1][1]),
         "supports": "The published series connect Intents usage to measured fees and flows into designated revenue wallets "
                     "over the same calendar windows. The wallet measure uses the adapter's NEAR/wNEAR transfer filters.",
         "investment_link": "Tracking activity and wallet revenue over the same periods helps test whether recurring usage contributes economic value.",
