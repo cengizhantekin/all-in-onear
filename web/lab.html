@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#faf9fc"><title>Labs — All in oNEar</title>
+  <link rel="icon" href="data:,"><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script>
+</head>
+<body class="lab-page">
+  <a class="skip-link" href="#workspace-title">Skip to Labs</a>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="All in oNEar home"><img src="/assets/all-in-onear.png" alt="All in oNEar" width="300" height="100"></a>
+    <nav aria-label="Main navigation">
+      <a href="/"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10l9-7 9 7M5 9v11h5v-6h4v6h5V9"/></svg>Home</a>
+      <a class="active" aria-current="page" href="/lab"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6m-5 0v7l-6 9a1 1 0 0 0 1 2h14a1 1 0 0 0 1-2l-6-9V3M7 16h10"/></svg>Labs</a>
+    </nav>
+  </header>
+  <main class="lab-main">
+    <section class="hubble-intro" aria-labelledby="workspace-title">
+      <svg class="lab-intro-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6m-5 0v7l-6 9a1 1 0 0 0 1 2h14a1 1 0 0 0 1-2l-6-9V3M7 16h10"/></svg>
+      <div>
+        <h1 class="sr-only" id="workspace-title" tabindex="-1">Labs</h1>
+        <p>Our <strong>All in oNEar</strong> thesis is that NEAR becomes more valuable to builders when accounts, scalable execution, cross-chain liquidity, privacy and AI work within one ecosystem. That gives teams a place to build applications that can reach users and assets across chains. The long-term investment case depends on whether those capabilities translate into sustained use and demand for NEAR.</p>
+        <p>I’ll walk you through the ideas and the evidence behind them. Want to see <strong>Why NEAR?</strong></p>
+        <div class="hubble-action"><img class="hubble-icon" src="/assets/hubble.png" alt="" width="40" height="40"><button type="button" class="action-button" id="show-theses" aria-expanded="false" aria-controls="thesis-library">Show All Theses <span aria-hidden="true">↓</span></button></div>
+      </div>
+    </section>
+    <div id="load-error" class="error-message hidden" role="alert"></div>
+    <section class="thesis-library hidden" id="thesis-library" aria-labelledby="theses-title">
+      <h2 id="theses-title" tabindex="-1">Explore the theses</h2>
+      <div class="hubble-action thesis-guidance"><img class="hubble-icon" src="/assets/hubble.png" alt="" width="40" height="40"><p>Select any thesis to see its details.</p></div>
+      <div class="thesis-groups">
+        <section aria-labelledby="group-protocol"><h3 id="group-protocol"><svg class="thesis-group-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7l9-4 9 4-9 4-9-4zm0 5l9 4 9-4M3 17l9 4 9-4"/></svg>Scale and adapt</h3><div class="thesis-options">
+          <button type="button" class="thesis-choice" data-thesis="capacity" aria-pressed="false" aria-controls="thesis-detail"><span>Protocol</span><strong>A foundation that scales</strong></button>
+          <button type="button" class="thesis-choice" data-thesis="adaptability" aria-pressed="false" aria-controls="thesis-detail"><span>Account security</span><strong>Adapt security as needs change</strong></button>
+        </div></section>
+        <section aria-labelledby="group-reach"><h3 id="group-reach"><svg class="thesis-group-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 8h12m-4-4 4 4-4 4m0 4H4m4-4-4 4 4 4"/></svg>Reach across chains</h3><div class="thesis-options">
+          <button type="button" class="thesis-choice" data-thesis="cross-chain" aria-pressed="false" aria-controls="thesis-detail"><span>Chain abstraction</span><strong>One entry point, many chains</strong></button>
+          <button type="button" class="thesis-choice" data-thesis="distribution" aria-pressed="false" aria-controls="thesis-detail"><span>Distribution</span><strong>Meet users in the products they use</strong></button>
+          <button type="button" class="thesis-choice" data-thesis="liquidity" aria-pressed="false" aria-controls="thesis-detail"><span>Liquidity</span><strong>Liquidity and distribution can reinforce each other</strong></button>
+        </div></section>
+        <section aria-labelledby="group-agents"><h3 id="group-agents"><svg class="thesis-group-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm-8 8v-1a5 5 0 0 1 5-5h6a5 5 0 0 1 5 5v1"/></svg>Build for people and agents</h3><div class="thesis-options">
+          <button type="button" class="thesis-choice" data-thesis="permissions" aria-pressed="false" aria-controls="thesis-detail"><span>Access keys</span><strong>Delegate a task, retain control</strong></button>
+          <button type="button" class="thesis-choice" data-thesis="deployment" aria-pressed="false" aria-controls="thesis-detail"><span>Global contracts</span><strong>Deploy once, reuse across accounts</strong></button>
+        </div></section>
+        <section aria-labelledby="group-privacy"><h3 id="group-privacy"><svg class="thesis-group-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 10h14v11H5zm3 0V7a4 4 0 0 1 8 0v3m-4 4v3"/></svg>Keep sensitive work private</h3><div class="thesis-options">
+          <button type="button" class="thesis-choice" data-thesis="private-ai" aria-pressed="false" aria-controls="thesis-detail"><span>NEAR AI</span><strong>Verify where private AI runs</strong></button>
+          <button type="button" class="thesis-choice" data-thesis="financial-privacy" aria-pressed="false" aria-controls="thesis-detail"><span>Confidential Intents</span><strong>Limit exposure of financial activity</strong></button>
+        </div></section>
+        <section aria-labelledby="group-value"><h3 id="group-value"><svg class="thesis-group-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4v16h16M8 15l4-4 3 2 5-6m-5 0h5v5"/></svg>Connect usage to value</h3><div class="thesis-options">
+          <button type="button" class="thesis-choice" data-thesis="revenue" aria-pressed="false" aria-controls="thesis-detail"><span>Intents revenue</span><strong>Trace usage to product revenue</strong></button>
+          <button type="button" class="thesis-choice" data-thesis="token" aria-pressed="false" aria-controls="thesis-detail"><span>NEAR economics</span><strong>Track how activity contributes to NEAR</strong></button>
+          <button type="button" class="thesis-choice" data-thesis="compute" aria-pressed="false" aria-controls="thesis-detail"><span>Staking for Inference</span><strong>Connect staking rewards to AI compute</strong></button>
+        </div></section>
+        <section aria-labelledby="group-practice"><h3 id="group-practice"><svg class="thesis-group-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6m-5 0v7l-6 9a1 1 0 0 0 1 2h14a1 1 0 0 0 1-2l-6-9V3M7 16h10"/></svg>Capabilities in practice</h3><div class="thesis-options">
+          <button type="button" class="thesis-choice" data-thesis="payment" aria-pressed="false" aria-controls="thesis-detail"><span>Payment rehearsal</span><strong>One payment, four capabilities</strong></button>
+        </div></section>
+      </div>
+    </section>
+    <section class="thesis-detail hidden" id="thesis-detail" aria-labelledby="selected-thesis-title">
+      <h2 id="selected-thesis-title" tabindex="-1"></h2>
+      <div id="thesis-description"></div>
+      <div class="hubble-action">
+        <img class="hubble-icon" src="/assets/hubble.png" alt="" width="40" height="40">
+        <button type="button" class="action-button" id="thesis-next" aria-expanded="false">Let’s experiment <span aria-hidden="true">↓</span></button>
+      </div>
+      <div class="hubble-action hidden" id="reference-thesis-action">
+        <img class="hubble-icon" src="/assets/hubble.png" alt="" width="40" height="40">
+        <button type="button" class="action-button" data-back-to-theses>Explore another thesis ↑</button>
+      </div>
+    </section>
+    <template id="thesis-capacity"><div class="thesis-body">
+          <p>Sharding gives the protocol a way to distribute work. A network that can adapt its shard layout has a path to accommodate more activity as demand changes.</p>
+          <p>The lab reads a finalized block and its protocol configuration. It exposes the observed structure at that block. Measuring throughput and latency would require a defined workload.</p>
+          <ul class="thesis-links"><li><a href="/lab?test=network">Inspect a finalized block <span aria-hidden="true">↗</span></a></li><li><a href="https://docs.near.org/protocol/network/architecture">NEAR architecture docs <span aria-hidden="true">↗</span></a></li></ul>
+        </div></template>
+    <template id="thesis-adaptability"><div class="thesis-body">
+          <p>A long-lived application needs to replace credentials and withdraw delegated access as responsibilities change. NEAR accounts can manage multiple keys and revoke an individual key.</p>
+          <p>The sandbox checks show one restricted key losing access while the owner retains control. An agent runtime can add its own tool isolation. A cryptographic migration addresses a different risk by changing how the account authorizes actions over time.</p>
+          <ul class="thesis-links"><li><a href="/lab?test=access">Inspect revocation evidence <span aria-hidden="true">↗</span></a></li><li><a href="https://docs.near.org/protocol/accounts-contracts/account-model">NEAR account model <span aria-hidden="true">↗</span></a></li><li><a href="https://github.com/nearai/ironclaw">IronClaw runtime <span aria-hidden="true">↗</span></a></li><li><a href="https://near.org/blog/making-near-protocol-post-quantum-safe">NEAR cryptographic migration plan <span aria-hidden="true">↗</span></a></li></ul>
+        </div></template>
+    <template id="thesis-cross-chain"><div class="thesis-body">
+          <p>A payments app can ask for a stablecoin conversion through one quote interface. Chain Signatures addresses a different step: authorizing transactions for external chains from a NEAR account.</p>
+          <p>The lab shows supported assets, dry quotes across three routes, and the configuration of the MPC signing contract. A separate check verifies one archived mainnet signature against the original digest and its derived public key. Changing one byte made verification fail.</p>
+          <ul class="thesis-links"><li><a href="/lab?test=assets">Inspect the asset catalog <span aria-hidden="true">↗</span></a></li><li><a href="/lab?test=quotes">Compare dry quotes <span aria-hidden="true">↗</span></a></li><li><a href="/lab?test=mpc">Inspect the signing contract <span aria-hidden="true">↗</span></a></li><li><a href="/lab?test=mpc_signature">Verify a real signature <span aria-hidden="true">↗</span></a></li><li><a href="https://docs.near-intents.org/">NEAR Intents docs <span aria-hidden="true">↗</span></a></li><li><a href="https://docs.near.org/chain-abstraction/chain-signatures">Chain Signatures docs <span aria-hidden="true">↗</span></a></li></ul>
+        </div></template>
+    <template id="thesis-distribution"><div class="thesis-body">
+          <p>Ledger announced NEAR Intents as a swap provider in Ledger Wallet through SwapKit. A wallet integration gives NEAR infrastructure a way to reach users where they already manage assets.</p>
+          <p>This gives NEAR Intents a distribution channel inside an existing wallet workflow. If users regularly choose swaps there, wallet integrations could bring recurring order flow without each user having to discover a dedicated Intents interface.</p>
+          <p>Partner-level swap counts, returning users and fee data would help show how much activity this channel actually contributes.</p>
+          <ul class="thesis-links"><li><a href="https://www.ledger.com/blog-near-intents-joins-ledger-wallet-via-swapkit">Ledger integration announcement <span aria-hidden="true">↗</span></a></li></ul>
+        </div></template>
+    <template id="thesis-liquidity"><div class="thesis-body">
+          <p>More distribution could bring more order flow. If that makes routes attractive to more liquidity providers, users could benefit from broader coverage and better quotes.</p>
+          <p>The saved comparison repeats six dry quote requests. The first round returned six previews. All six requests timed out in the second round, leaving output changes unmeasured. Solver participation and repeat use need their own data.</p>
+          <ul class="thesis-links"><li><a href="/lab?test=quotes">Inspect the quote sample <span aria-hidden="true">↗</span></a></li><li><a href="/lab?test=quotes_repeat">Compare two quote rounds <span aria-hidden="true">↗</span></a></li><li><a href="https://docs.near-intents.org/">NEAR Intents docs <span aria-hidden="true">↗</span></a></li></ul>
+        </div></template>
+    <template id="thesis-permissions"><div class="thesis-body">
+          <p>A user can authorize an agent to call a specified contract method through a restricted access key, then revoke that key when the task ends.</p>
+          <p>All eight permission checks matched expectations in our local NEAR Sandbox run. They covered allowed calls, method and receiver restrictions, deposit and transfer restrictions, revocation, and continued owner access.</p>
+          <ul class="thesis-links"><li><a href="/lab?test=access">Reproduce the permission checks <span aria-hidden="true">↗</span></a></li><li><a href="https://docs.near.org/protocol/accounts-contracts/access-keys">NEAR access key docs <span aria-hidden="true">↗</span></a></li></ul>
+        </div></template>
+    <template id="thesis-deployment"><div class="thesis-body">
+          <p>A service deploying identical contract code for many accounts can use a shared global contract. Each account keeps its own state while referencing the shared code.</p>
+          <p>In our Sandbox comparison, added storage per account fell from 330 bytes for a code copy to 32 bytes for a reference, a 90.3% reduction. Both deployment paths passed the state-write and isolation checks.</p>
+          <ul class="thesis-links"><li><a href="/lab?test=global_contracts">Inspect storage and state checks <span aria-hidden="true">↗</span></a></li><li><a href="https://github.com/near/NEPs/blob/master/neps/nep-0591.md">Global contracts specification <span aria-hidden="true">↗</span></a></li></ul>
+        </div></template>
+    <template id="thesis-private-ai"><div class="thesis-body">
+          <p>A team processing sensitive documents can inspect attestation evidence for the hardware and software environment serving an AI request. Connection and response verification can help it check how the request was handled.</p>
+          <p>The lab checks a public GLM 5.3 Flash report against the client challenge, configuration and runtime event log. An optional Intel verifier checks the saved quote and collateral.</p>
+          <ul class="thesis-links"><li><a href="/lab?test=ai_attestation">Inspect the direct model report <span aria-hidden="true">↗</span></a></li><li><a href="https://near.ai/blog/assume-were-lying-how-to-verify-private-ai">NEAR AI verification walkthrough <span aria-hidden="true">↗</span></a></li></ul>
+        </div></template>
+    <template id="thesis-financial-privacy"><div class="thesis-body">
+          <p>A trading desk may want to reduce how much its position or strategy reveals to public observers. The Confidential Intents design describes a private execution environment with its own access and validator assumptions.</p>
+          <p>The privacy boundary matters for adoption. The bridge connects the private shard to public settlement. Deposits and withdrawals reveal a different slice of activity than movements inside the private environment.</p>
+          <p>That distinction matters for teams that want to limit how much of their trading activity becomes visible. To assess the practical benefit, a comparison could trace what a public observer sees before, during and after otherwise similar trades.</p>
+          <ul class="thesis-links"><li><a href="https://near.org/blog/how-confidential-intents-works">Confidential Intents architecture <span aria-hidden="true">↗</span></a></li></ul>
+        </div></template>
+    <template id="thesis-revenue"><div class="thesis-body">
+          <p>An integration can expand transaction volume while its economic contribution depends on which fees are charged and who retains them. Quote output alone leaves that accounting unresolved.</p>
+          <p>The historical experiment compares reported Intents swap volume, gross fees and revenue wallet inflows over two matched 30-day windows. The scenario tool lets readers explore how changing the assumed conversion from activity to revenue affects the model.</p>
+          <ul class="thesis-links"><li><a href="/lab?test=intents_history">Inspect reported historical figures <span aria-hidden="true">↗</span></a></li><li><a href="/lab?test=economics">Explore the economic scenario <span aria-hidden="true">↗</span></a></li><li><a href="https://docs.near-intents.org/resources/fees">NEAR Intents fee docs <span aria-hidden="true">↗</span></a></li></ul>
+        </div></template>
+    <template id="thesis-token"><div class="thesis-body">
+          <p>Network usage can affect demand for gas, storage and staking. Product revenue could also contribute through an explicit allocation policy. Purchases, staking and burns each affect different quantities.</p>
+          <p>Three archived transactions trace withdrawals from Intents through wrap.near to a designated revenue wallet. The scenario models how alternative allocation assumptions could affect token purchases and burns.</p>
+          <ul class="thesis-links"><li><a href="/lab?test=treasury_flows">Trace the wallet transfers <span aria-hidden="true">↗</span></a></li><li><a href="/lab?test=economics">Change the allocation assumptions <span aria-hidden="true">↗</span></a></li><li><a href="https://near.org/blog/evolving-near-tokenomics">NEAR tokenomics proposal <span aria-hidden="true">↗</span></a></li><li><a href="https://docs.near.org/protocol/network/tokens">NEAR token docs <span aria-hidden="true">↗</span></a></li></ul>
+        </div></template>
+    <template id="thesis-compute"><div class="thesis-body">
+          <p>The Staking for Inference design describes using staking rewards to fund AI usage. An application with recurring inference needs could estimate how much of its compute budget those rewards cover.</p>
+          <p>Use the calculator to compare estimated staking credits with a monthly input and output token bill. Change the assumptions to see how the budget and required stake move.</p>
+          <ul class="thesis-links"><li><a href="/lab?test=staking_inference">Estimate your inference budget <span aria-hidden="true">↗</span></a></li><li><a href="https://docs.near.ai/cloud/staking-for-inference/overview">Staking for Inference overview <span aria-hidden="true">↗</span></a></li></ul>
+        </div></template>
+    <template id="thesis-payment"><div class="thesis-body">
+        <p>A supplier wants USDC on Base. In this example, an assistant starts from a request to spend 25 USDC on NEAR. It uses a recorded Intents dry quote and checks the recipient, spending cap and minimum output before preparing a brief for human review.</p>
+        <p>The same workflow shows where confidential inference, delegated account permissions and cross-chain signing could fit. Their evidence comes from separate tests. The offline rehearsal runs the quote and local policy checks and ends at human review.</p>
+        <ul class="thesis-links"><li><a href="/lab?test=payment_rehearsal">Run the payment rehearsal</a></li><li><a href="/lab?test=ai_attestation">Inspect a confidential AI report</a></li><li><a href="/lab?test=access">Inspect account permissions</a></li><li><a href="/lab?test=mpc_signature">Verify an archived signature</a></li></ul>
+      </div></template>
+    <section class="workspace hidden" id="workspace" tabindex="-1" aria-label="Experiment workspace">
+      <div class="experiment-picker hidden" id="experiment-picker">
+        <label for="experiment-choice">Choose an experiment</label>
+        <select id="experiment-choice"></select>
+      </div>
+        <section class="code-panel hidden" id="experiment-panel" tabindex="-1" aria-labelledby="experiment-title">
+          <div class="panel-top"><span class="eyebrow">INSPECT & EXECUTE</span><span class="lang-pill">PYTHON</span></div>
+          <h2 id="experiment-title" tabindex="-1">Loading…</h2><p class="experiment-question" id="experiment-question"></p>
+          <div class="runtime" id="runtime"></div><p class="sandbox-note hidden" id="sandbox-note" role="status"></p>
+          <div id="scenario-controls" class="scenario-controls hidden"><div class="scenario-note">ILLUSTRATIVE INPUTS · NOT CURRENT NEAR FIGURES</div><div id="scenario-fields" class="field-grid"></div></div>
+          <details class="source-details" open><summary>View executable code</summary>
+            <div class="source-tabs" id="source-tabs" role="tablist" aria-label="Source files"></div>
+            <div class="code-wrap"><pre tabindex="0" aria-label="Executable experiment source"><code id="source-code"></code></pre></div>
+            <div class="code-actions"><span id="source-caption">Complete source, including shared helpers.</span><button class="text-button" id="copy-code" type="button">Copy code ↗</button></div>
+            <div class="command-line"><span>$</span><code id="cli-command"></code></div>
+          </details>
+          <div class="execution-bar"><div><label class="select-label" for="run-mode">DATA MODE</label><select id="run-mode"><option value="live">Live observation</option><option value="replay">Recorded data · recompute</option></select></div><div class="run-action"><img class="hubble-icon" src="/assets/hubble.png" alt="" width="40" height="40"><button id="run-button" class="action-button" type="button" disabled>Run experiment <span aria-hidden="true">↗</span></button></div></div>
+        </section>
+      <section class="result-panel hidden" id="result-panel" tabindex="-1" aria-label="Experiment results" aria-live="polite">
+        <div class="running-state hidden" id="running-state"><span class="spinner"></span><div><h3 id="running-title">Running the selected script…</h3><p>No result is substituted if a source is unavailable.</p></div></div>
+        <div class="error-message hidden" id="run-error" role="alert"></div>
+        <div class="hidden" id="result-content">
+          <div class="result-heading"><div><div class="result-badges" id="result-badges"></div><h3 id="result-title" tabindex="-1"></h3></div><button type="button" class="action-button" id="download-result">Download evidence ↓</button></div>
+          <p id="result-summary" class="result-summary"></p><div class="metrics" id="metrics"></div>
+          <div id="result-chart" class="chart hidden" aria-label="Scenario sensitivity"></div>
+          <div id="primary-table"></div>
+          <div class="interpretation"><div><h4>What this means for the thesis</h4><p id="supports"></p></div><div><h4>Why it matters</h4><p id="investment-link"></p></div></div>
+          <div class="limits"><span>INTERPRETATION BOUNDARY</span><p id="limits"></p></div>
+          <details><summary>Inspect calculated rows</summary><div class="table-wrap" id="result-table"></div></details>
+          <details><summary>Provenance & raw evidence</summary><p id="provenance" class="provenance"></p><p class="tiny">Checksums detect changes relative to this record; they are not an independent attestation of the provider or capture time.</p><pre class="raw-output"><code id="raw-output"></code></pre></details>
+          <div class="hubble-action hidden" id="another-experiment-action"><img class="hubble-icon" src="/assets/hubble.png" alt="" width="40" height="40"><button type="button" class="action-button" id="another-experiment">Choose another experiment ↑</button></div>
+          <div class="hubble-action"><img class="hubble-icon" src="/assets/hubble.png" alt="" width="40" height="40"><button type="button" class="action-button" data-back-to-theses>Explore another thesis ↑</button></div>
+        </div>
+      </section>
+    </section>
+    <section class="lab-sources hidden" id="lab-sources" aria-labelledby="sources-title">
+      <h2 id="sources-title" tabindex="-1">Sources</h2>
+      <ul class="thesis-links" id="source-links"></ul>
+    </section>
+  </main>
+  <footer class="site-footer"><span>All in oNEar <span class="muted">/ Research prototype · v0.23</span></span><a href="/">Back to Home ↑</a></footer>
+  <div class="toast hidden" id="toast" role="status"></div>
+</body>
+</html>

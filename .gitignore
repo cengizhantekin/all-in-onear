@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.venv/
+.venv-*/
+.attestation-deps/
+.env
+.env.*
+!.env.example
+runs/
+*.log
+.DS_Store
+.openai/
+node_modules/

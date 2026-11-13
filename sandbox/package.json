@@ -1,0 +1,9 @@
+{
+  "name": "onear-access-key-sandbox",
+  "version": "0.5.0",
+  "private": true,
+  "type": "module",
+  "engines": {"node": ">=22.22.2"},
+  "scripts": {"experiment": "node access-keys.mjs"},
+  "dependencies": {"near-api-js": "7.4.0", "near-sandbox": "0.3.5", "wabt": "1.0.39"}
+}

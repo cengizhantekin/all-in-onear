@@ -1,0 +1,69 @@
+{
+  "parent_recording": "quotes.json",
+  "parent_evidence_sha256": "d54e20e5271945e576a414753cc46c383819427a42fafce1797eaf72d07c0c01",
+  "deadline": "2026-11-10T14:21:07Z",
+  "observation": {
+    "endpoint": "https://1click.chaindefuser.com/v0/quote",
+    "request": {
+      "dry": true,
+      "swapType": "EXACT_INPUT",
+      "slippageTolerance": 100,
+      "originAsset": "nep141:17208628f84f5d6ad33f0da3bbbeb27ffcb398eac501a31bd6ad2011e36133a1",
+      "destinationAsset": "nep141:base-0x833589fcd6edb6e08f4c7c32d4f71b54bda02913.omft.near",
+      "amount": "25000000",
+      "depositType": "ORIGIN_CHAIN",
+      "recipientType": "DESTINATION_CHAIN",
+      "refundType": "ORIGIN_CHAIN",
+      "recipient": "0x2527D02599Ba641c19FEa793cD0F167589a0f10D",
+      "refundTo": "intents.near",
+      "deadline": "2026-11-10T14:21:07Z",
+      "quoteWaitingTimeMs": 3000
+    },
+    "started_at": "2026-11-10T13:21:07.820312+00:00",
+    "http_status": 201,
+    "finished_at": "2026-11-10T13:21:16.292701+00:00",
+    "response_ms": 8472,
+    "response": {
+      "quote": {
+        "amountIn": "25000000",
+        "amountInFormatted": "25.0",
+        "amountInUsd": "24.987925000000",
+        "minAmountIn": "25000000",
+        "amountOut": "24992550",
+        "amountOutFormatted": "24.99255",
+        "amountOutUsd": "24.980478598350",
+        "minAmountOut": "24742624",
+        "timeEstimate": 22,
+        "refundFee": "0",
+        "withdrawFee": "2400"
+      },
+      "quoteRequest": {
+        "dry": true,
+        "depositMode": "SIMPLE",
+        "swapType": "EXACT_INPUT",
+        "slippageTolerance": 100,
+        "originAsset": "nep141:17208628f84f5d6ad33f0da3bbbeb27ffcb398eac501a31bd6ad2011e36133a1",
+        "depositType": "ORIGIN_CHAIN",
+        "destinationAsset": "nep141:base-0x833589fcd6edb6e08f4c7c32d4f71b54bda02913.omft.near",
+        "amount": "25000000",
+        "refundTo": "intents.near",
+        "refundType": "ORIGIN_CHAIN",
+        "recipient": "0x2527D02599Ba641c19FEa793cD0F167589a0f10D",
+        "recipientType": "DESTINATION_CHAIN",
+        "deadline": "2026-11-10T14:21:07.000Z",
+        "confidentiality": "public",
+        "quoteWaitingTimeMs": 3000,
+        "insured": false,
+        "appFees": [
+          {
+            "recipient": "5880ad2b362620fadf759cbceb1cd5737ce8c6ed7fb8e9942881e6731f9247dd",
+            "fee": 1
+          }
+        ]
+      },
+      "signature": "ed25519:4B87pTNfne2i8vkYYF1wEQ8cjThtXHbeLjerwvYi2hLawnaorW6F6Xc6pvyQAZaCXVqPUSTocfNaMjNEGhPgX8jp",
+      "timestamp": "2026-11-10T13:21:12.979Z",
+      "correlationId": "680d8b9d-f61a-4f2d-9f45-1c0c54543aed"
+    }
+  }
+}
